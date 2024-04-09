@@ -1,0 +1,29 @@
+# Node.js
+node_modules/
+
+# SQLite database
+*.db
+
+# Logs
+*.log
+
+# Dependency directories
+# You might have other directories like `bower_components/` or `jspm_packages/`
+vendor/
+
+# OS generated files
+.DS_Store
+Thumbs.db
+
+# Environment variables
+.env
+
+# IDE or editor files
+.idea/
+.vscode/
+
+# Build files
+/build
+
+# Temporary files
+*.tmp
