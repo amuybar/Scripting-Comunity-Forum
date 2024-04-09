@@ -1,0 +1,32 @@
+{
+  "name": "pyscript_forum",
+  "version": "1.0.0",
+  "description": "Community forum for python scripting",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Barrack Amuyunzu",
+  "license": "ISC",
+  "dependencies": {
+    "axios": "^1.6.8",
+    "bcrypt": "^5.1.1",
+    "bcryptjs": "^2.4.3",
+    "connect-flash": "^0.1.1",
+    "express": "^4.19.2",
+    "express-session": "^1.18.0",
+    "mustache-express": "^1.3.2",
+    "nodemailer": "^6.9.13",
+    "passport": "^0.7.0",
+    "passport-local": "^1.0.0",
+    "sqlite3": "^5.1.7"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.0"
+  },
+  "nodemonConfig": {
+    "watch": ["**/*.js", "**/*.mustache","**/*.css"],
+    "ext": "js,mustache" 
+  }
+
+}

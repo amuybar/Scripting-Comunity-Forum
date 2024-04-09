@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ forumName }}</title>
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
+    <link rel="stylesheet" href="/css/listview.css"> 
+    <link rel="stylesheet" href="/css/footer.css"> 
+    <link rel="stylesheet" href="/css/styles.css">
+</head>
+<body > 
+<nav class="custom-navbar ">
+       
+        <a class="navbar-brand" href="#">{{ forumName }}</a>
+        <div class="search-container">
+          <input type="text" id="searchInput" class="search-input"placeholder="Search...">
+          <button id="searchBtn"><i class="fa fa-search"></i></button>
+           <div id="searchDropdown" class="search-dropdown"></div>
+        </div>
+        <div class="navbar-nav ml-auto">
+            {{#loggedIn}}
+            <span class="nav-item">
+                <span id="welcomeMessage" class="welcome-message">Welcome, {{ fullName }}</span>
+            </span>
+            <a id="logoutLink" class="nav-item nav-link logout-link" href="/auth/logout">Logout</a>
+            {{/loggedIn}}
+            {{^loggedIn}}
+            <a id="loginLink" class="nav-item nav-link login-link" href="/auth/login">Login</a>
+            <a id="registerLink" class="nav-item nav-link register-link" href="/auth/register">Register</a>
+            {{/loggedIn}}
+       
+    </div>
+     <div class="menu-icon" onclick="openSidebar()">
+  <i class="fas fa-bars"></i>
+   </div>
+</nav>
+
+
+<div class="container">
+    <div class="row">
+        <div class="custom-sidebar-left"> 
+         
+          <nav class="sidebar-nav">
+        <ul>
+          <li><a href="/"><i class="fas fa-home"></i> Home</a></li>
+          <li><a href="/blog"><i class="fas fa-question"></i> Blog</a></li>
+          <li><a href="/tags"><i class="fas fa-tags"></i> Tags</a></li>
+          <li><a href="/saves"><i class="fas fa-star"></i> Saves</a></li>
+          <li><a href="users"><i class="fas fa-users"></i> Users</a></li>
+          <li><a href="/companies"><i class="fas fa-building"></i> Companies</a></li>
+          <li class="divider"></li>
+          <li><a href="#">Labs <i class="fas fa-flask"></i></a></li>
+          <li><a href="#">Discussions <i class="fas fa-comments"></i></a></li>
+          <li class="new"><a href="#">NEW <i class="fas fa-star"></i> Collectives</a></li>
+          <li><a href="#">Communities for your favorite technologies. Explore all Collectives</a></li>
+          <li class="divider"></li>
+          <li><a href="#">Teams <i class="fas fa-users"></i></a></li>
+          <li><a href="#">Ask questions, find answers and collaborate at work with Stack Overflow for Teams.</a></li>
+          <li><a href="#">Explore Teams  Create a free Team</a></li>
+          <li><a href="#">Looking for your Teams?</a></li>
+        </ul>
+       </nav>
+      <div class="close-btn" onclick="closeSidebar()">X</div>
+        </div>
+        <div class="custom-sidebar-right"> 
+        
+          <div class="qtn-bar"> 
+          <h3>Top Questios</h3> 
+          <div >
+              
+              <a class="qbtn" href="/api/question"><i class="fas fa-question"></i> Ask A Question</a>
+          </div>
+         </div>
+         <div class="list-container" id="listContainer">
+        {{#questions}} 
+         <div class="list-item">
+         <div class="likes-views">
+               <p>Likes: {{likes}}</p>
+               <p>Views: {{views}}</p>
+          </div>
+          <div class="link-language">
+               <a href="#">{{title}}</a>
+               <p>Language: {{language}}</p>
+          </div>
+           <div class="answers-username">
+               <a href="#">Answers: {{answers}}</a>
+               <p>Posted by: {{user.username}}</p>
+            </div>
+        </div>
+       
+        {{/questions}}
+    </div>
+    </div>
+</div>
+
+<div class="footer" id="footer">
+    <div class="footer-links">
+        <div class="footer-section">
+            <h4>Questions</h4>
+            <ul>
+                <li><a href="#">Ask a question</a></li>
+                <li><a href="#">Answer a question</a></li>
+            </ul>
+        </div>
+        <div class="footer-section">
+            <h4>Help</h4>
+            <ul>
+                <li><a href="#">FAQs</a></li>
+                <li><a href="#">Contact support</a></li>
+            </ul>
+        </div>
+        <div class="footer-section">
+            <h4>PRODUCTS</h4>
+            <ul>
+                <li><a href="#">Product 1</a></li>
+                <li><a href="#">Product 2</a></li>
+            </ul>
+        </div>
+        <!-- Add more sections as needed -->
+    </div>
+    <div class="footer-section">
+        <h4>COMPANY</h4>
+        <ul>
+            <li><a href="#">About</a></li>
+            <li><a href="#">Press</a></li>
+            <li><a href="#">Work Here</a></li>
+            <li><a href="#">Legal</a></li>
+            <li><a href="#">Privacy Policy</a></li>
+            <li><a href="#">Terms of Service</a></li>
+            <li><a href="#">Contact Us</a></li>
+            <li><a href="#">Cookie Settings</a></li>
+            <li><a href="#">Cookie Policy</a></li>
+        </ul>
+    </div>
+    <div class="footer-section">
+        <h4>STACK EXCHANGE NETWORK</h4>
+        <ul>
+            <li><a href="#">Technology</a></li>
+            <li><a href="#">Culture & recreation</a></li>
+            <li><a href="#">Life & arts</a></li>
+            <li><a href="#">Science</a></li>
+            <li><a href="#">Professional</a></li>
+            <li><a href="#">Business</a></li>
+            <li><a href="#">API</a></li>
+            <li><a href="#">Data</a></li>
+            <li><a href="#">Blog</a></li>
+        </ul>
+    </div>
+    <div class="footer-social">
+        <a href="#">Facebook</a>
+        <a href="#">Twitter</a>
+        <a href="#">LinkedIn</a>
+        <a href="#">Instagram</a>
+    </div>
+</div>
+
+
+<script src="/js/index.js"></script>
+ <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script> <!-- Include Axios library -->
+    <script src="/js/listview.js"></script> 
+</body>
+</html>

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register for {{ forumName }} Community Forum</title>
+    <link rel="stylesheet" href="/css/register.css"> <!-- Link to your CSS stylesheet -->
+</head>
+<body>
+    <div class="container">
+        <h1>Register</h1>
+
+        {{# errorMessage }}
+            <p class="error-message">{{ errorMessage }}</p>
+        {{/ errorMessage }}
+
+        <form action="/auth/register" method="post" class="register-form">
+            <label for="username">Username:</label>
+            <input type="text" id="username" name="username" required><br>
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password" required><br>
+            <label for="confirmPassword">Confirm Password:</label>
+            <input type="password" id="confirmPassword" name="confirmPassword" required><br>
+            <label for="fullName">Full Name:</label>
+            <input type="text" id="fullName" name="fullName" required><br> <!-- New input field for full name -->
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required><br> <!-- New input field for email -->
+            <button type="submit" class="btn-register">Register</button>
+        </form>
+
+        <p>Already have an account? <a href="/auth/login">Login</a> here.</p>
+    </div>
+</body>
+</html>

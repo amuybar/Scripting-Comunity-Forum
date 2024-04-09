@@ -1,0 +1,350 @@
+
+body {
+  font-family: "Inter var",ui-sans-serif,system-ui,-apple-system,system-ui,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";
+  overflow-x: hidden; 
+  background-color: #16293b;
+  color: #f0f0f0;
+  
+}
+
+
+.custom-navbar {
+  max-width: 100%;
+  overflow: hidden;
+  padding:  20px;
+  display: flex ;
+  flex-direction: row !important;
+  align-items: center;
+  margin-right: 0px;
+  justify-content: space-between;
+  background-color: #0c1721;
+  height: 70px;
+}
+
+.custom-navbar .navbar-brand {
+  color: #fff;
+  font-weight: bold;
+  font-size: 24px;
+  text-decoration: none; 
+  margin: 0;
+}
+
+
+
+.custom-navbar .nav-link {
+  color: #fff;
+}
+
+
+.qbtn a{
+  text-decoration: none;
+  font-weight: bold; 
+  letter-spacing: 0.05em;
+
+}
+
+.qbtn .fas {
+  margin-right: 5px;
+  font-size: 20px;
+  color: white;
+  transition: 0.3s;
+  
+}
+
+
+.qtn-bar{
+  border-bottom: 0.5px solid #8ef091;
+  height: auto;
+  display: flex;
+  flex-direction: row;
+   max-width: 100%;
+   align-items: center;
+  justify-content: space-between;
+}
+
+
+
+.row{
+  max-width: 100%;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  
+  flex-direction: row;
+}
+.custom-sidebar-right {
+  /* width: 70%; */
+  
+  padding: 20px;
+  color: #ffffff;
+  border-radius: 12px;
+  
+}
+ .custom-sidebar-left {
+  
+  max-width: 30%;
+  padding: 20px;
+  background-color: #0c1721;
+  overflow-y: auto; 
+  height: 100%;
+}
+
+
+.sidebar-nav {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.sidebar-nav li {
+  margin-bottom: 10px;
+  
+}
+
+.sidebar-nav a {
+  color: #a8a7a7;
+  text-decoration: none;
+  display: block;
+  padding: 10px;
+}
+
+.sidebar-nav a i {
+  margin-right: 10px;
+  
+}
+
+.sidebar-nav a:hover {
+  background-color: #ffffff;
+  color: #202020;
+}
+
+.divider {
+  border-bottom: 1px solid #ddd;
+  margin: 15px 0;
+}
+
+.new {
+  font-weight: bold;
+}
+
+.menu-icon {
+  display: none; 
+}
+
+.search-container {
+  position: relative;
+}
+
+.search-input {
+  width: 350px;
+  padding: 18px;
+  border: 1px solid #024155;
+  border-radius: 15px;
+  background-color: #112231;
+  color: white;
+  font-size: 18px;
+}
+
+.search-dropdown {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 100%;
+  background-color: #444343;
+  border: 1px solid #ccc;
+  border-top: none;
+  border-radius: 0 0 5px 5px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  z-index: 1;
+  display: none;
+}
+
+.search-item {
+  padding: 8px;
+  cursor: pointer;
+}
+
+.search-item:hover {
+  background-color: #f0f0f0;
+}
+#searchBtn {
+  background-color: #007bff;
+  color: white;
+  padding: 10px;
+  border: none;
+  border-radius: 0 15px 15px 0;
+  
+  cursor: pointer;
+}
+
+
+.fa-search {
+  font-size: 23px;
+}
+
+
+
+
+/* Login button*/
+.custom-navbar .nav-item {
+  background-color: #FFFFFF;
+  border: 1px solid rgb(209,213,219);
+  border-radius: .5rem;
+  box-sizing: border-box;
+  color: #111827;
+  font-family: "Inter var",ui-sans-serif,system-ui,-apple-system,system-ui,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";
+  font-size: .875rem;
+  font-weight: 600;
+  line-height: 1.25rem;
+  padding: .75rem 1rem;
+  text-align: center;
+  text-decoration: none #D1D5DB solid;
+  text-decoration-thickness: auto;
+  box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+  cursor: pointer;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+}
+
+.custom-navbar .nav-item:hover {
+  background-color: rgb(249,250,251);
+}
+
+.custom-navbar .nav-item:focus {
+  outline: 2px solid transparent;
+  outline-offset: 2px;
+}
+
+.custom-navbar .nav-item:focus-visible {
+  box-shadow: none;
+}
+
+
+
+/* ask a question button */
+.qbtn {
+  --b: 3px;   
+  --s: .45em; 
+  --color: #ffffff;
+  
+  padding: calc(.5em + var(--s)) calc(.9em + var(--s));
+  color: var(--color);
+  --_p: var(--s);
+  background:
+    conic-gradient(from 90deg at var(--b) var(--b),#0000 90deg,var(--color) 0)
+    var(--_p) var(--_p)/calc(100% - var(--b) - 2*var(--_p)) calc(100% - var(--b) - 2*var(--_p));
+  transition: .3s linear, color 0s, background-color 0s;
+  outline: var(--b) solid #0000;
+  outline-offset: .6em;
+  font-size: 16px;
+
+  border: 0;
+  margin: 30px;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+}
+
+.qbtn:hover,
+.qbtn:focus-visible{
+  --_p: 0px;
+  outline-color: var(--color);
+  outline-offset: .05em;
+}
+
+.qbtn:active {
+  background: var(--color);
+  color: #000000;
+}
+
+@media only screen and (max-width: 780px) {
+  
+body {
+  font-family: "Inter var",ui-sans-serif,system-ui,-apple-system,system-ui,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";
+  overflow-x: hidden; 
+  background-color: #16293b;
+  color: #f0f0f0;
+  max-width: 100%;
+  
+}
+  .custom-sidebar-left {
+    display: none;
+  }
+  .custom-sidebar-right{
+   max-width: 100%;
+  }
+  .qbtn {
+    --b: 2px;  
+    --s: .3em; 
+    --color: #ffffff; 
+  
+    padding: calc(.5em + var(--s)) calc(.9em + var(--s));
+    color: var(--color);
+    --_p: var(--s);
+    background: conic-gradient(from 90deg at var(--b) var(--b), #0000 90deg, var(--color) 0) var(--_p) var(--_p)/calc(100% - var(--b) - 2*var(--_p)) calc(100% - var(--b) - 2*var(--_p));
+    transition: .3s linear, color 0s, background-color 0s;
+    outline: var(--b) solid #0000;
+    outline-offset: .6em;
+    font-size: 14px; 
+    border: 0;
+    margin: 3px;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+  }
+  
+  
+  .search-container {
+    display:none;
+  }
+
+  
+
+  /* Show the menu icon */
+  .menu-icon {
+    display: block;
+  }
+  .sidebar-open .menu-icon{
+    display: none;
+  }
+
+  /* Hide the other elements in the navbar */
+  
+  .navbar-nav {
+    display: none;
+  }
+
+
+.sidebar-open {
+  position: fixed;
+  top: 0;
+  left: 0;
+  max-width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5); 
+  z-index: 1000; 
+}
+
+.sidebar-open .custom-sidebar-left {
+  display: block;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  max-width: 100%;
+  background-color: #0c1721;
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+
+.close-btn {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  color: #fff;
+  cursor: pointer;
+  font-size: 24px;
+}
+}

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login to {{ forumName }} Community Forum</title>
+    <link rel="stylesheet" href="/css/login.css"> <!-- Link to your CSS stylesheet -->
+</head>
+<body>
+    <h1>Login</h1>
+
+    {{#errorMessage}}
+        <p class="error-message">{{ errorMessage }}</p>
+    {{/errorMessage}}
+
+    <form action="/auth/login" method="post" class="login-form">
+        <label for="usernameOrEmail">Username Or Email:</label>
+        <input type="text" id="usernameOrEmail" name="usernameOrEmail" required><br>
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password" required><br>
+        <button type="submit" class="btn-login">Login</button>
+        <p>Forget <a href="/auth/forgot">Password</a>.</p>
+    </form>
+
+    <p>Don't have an account? <a href="/auth/register">Register</a> here.</p>
+</body>
+</html>
