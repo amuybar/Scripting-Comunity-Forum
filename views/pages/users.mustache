@@ -3,22 +3,29 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{forumName}</title>
-    <link rel="stylesheet" href="/css/blog.css"> <!-- Link to your CSS stylesheet -->
+    <title>Users Page</title>
+    <link rel="stylesheet" href="/css/user.css">
 </head>
 <body>
     <header>
         <h1>Users Page</h1>
-        <button id="post-blog-btn">Post Blog</button>
+        
     </header>
-    <div class="blog-container">
-        {{#blogs}}
-            <div class="blog-item">
-                <h2>{{title}}</h2>
-                <p>{{content}}</p>
-                <span>Posted by: {{author}}</span>
+    <div class="user-container" id="user-container">
+        {{#users}}
+        <div class="user-card">
+            <div class="user-profile">
+                 <div class="avatar">{{name.charAt(0).toUpperCase()}}</div>
+               
             </div>
-        {{/blogs}}
+            <div class="user-info">
+                <div class="user-name">{{name}}</div>
+                <div class="user-email">{{email}}</div>
+            </div>
+        </div>
+        {{/users}}
     </div>
+
+    <script src="/js/user.js"></script>
 </body>
 </html>

@@ -7,8 +7,7 @@ router.get('/question', async (req, res) => {
   try {
     if (req.isAuthenticated() && req.user) {
       const user = await User.findByUsername(req.user.username);
-      
-      res.render('question', { userId: user.id }); // Pass userId to the template
+      res.render('question', { userId: user.id }); 
     } else {
       res.render('login');
     }
@@ -20,14 +19,14 @@ router.get('/question', async (req, res) => {
 
 // Route to create a new forum post
 router.post('/ask-question', (req, res) => {
-  const { title, content, userId } = req.body;
-  Forum.create(title, content, userId, (err, post) => {
+  const { title, content, userId, language } = req.body; 
+  Forum.create(title, content, userId, language, (err, post) => { 
     if (err) {
+      console.log(err);
       return res.status(500).json({ error: err.message });
     }
     
-    res.status(201).json(post);
-    res.redirect('/question')
+    res.redirect('/');
   });
 });
 

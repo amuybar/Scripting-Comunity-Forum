@@ -28,6 +28,18 @@ const User = {
       });
     });
   },
+  getUserById: function (userId) {
+    return new Promise((resolve, reject) => {
+      db.get('SELECT * FROM users WHERE id = ?', [userId], (err, row) => {
+        if (err) {
+          reject(err);
+        } else {
+          resolve(row);
+        }
+      });
+    });
+  },
+  
   // Method to find a user by username
   findByUsername: function (username) {
     return new Promise((resolve, reject) => {

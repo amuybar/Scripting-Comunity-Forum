@@ -21,14 +21,16 @@
 .likes-views {
   flex: 0 0 auto; 
   margin-right: 10px;
+  justify-content: start;
 }
 
 .likes-views p {
   margin: 10px;
-  color: #555555;
+  color: #929292;
 }
 .link-language a {
   margin: 0;
+  flex-wrap: wrap;
   color:rgb(0, 180, 240);
   font-size: 20px;
   text-decoration: none;
@@ -42,16 +44,18 @@
 .answers-username {
   flex: 0 0 auto; 
   margin-left: auto; 
+  
 }
 .answers-username a{
   margin: 0;
   color:rgb(10, 150, 197);
   font-size: 15px;
   text-decoration: none;
+  
 }
 .answers-username p{
-  margin: 10px;
-  color: #555555;
+  margin-top: 10px;
+  color: #3b3b3b;
 }
 @media screen and (max-width:768px) {
   .list-container {

@@ -73,7 +73,7 @@ body {
   flex-direction: row;
 }
 .custom-sidebar-right {
-  /* width: 70%; */
+  min-width: 70%; 
   
   padding: 20px;
   color: #ffffff;
@@ -272,7 +272,7 @@ body {
     display: none;
   }
   .custom-sidebar-right{
-   max-width: 100%;
+   min-width: 100%;
   }
   .qbtn {
     --b: 2px;  

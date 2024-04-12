@@ -50,12 +50,12 @@
           <li><a href="users"><i class="fas fa-users"></i> Users</a></li>
           <li><a href="/companies"><i class="fas fa-building"></i> Companies</a></li>
           <li class="divider"></li>
-          <li><a href="#">Labs <i class="fas fa-flask"></i></a></li>
-          <li><a href="#">Discussions <i class="fas fa-comments"></i></a></li>
-          <li class="new"><a href="#">NEW <i class="fas fa-star"></i> Collectives</a></li>
-          <li><a href="#">Communities for your favorite technologies. Explore all Collectives</a></li>
+          <li><a href="/labs">Labs <i class="fas fa-flask"></i></a></li>
+          <li><a href="/discussions">Discussions <i class="fas fa-comments"></i></a></li>
+          <li class="new"><a href="/collectives">NEW <i class="fas fa-star"></i> Collectives</a></li>
+          <li><a href="/communities">Communities for your favorite technologies. Explore all Collectives</a></li>
           <li class="divider"></li>
-          <li><a href="#">Teams <i class="fas fa-users"></i></a></li>
+          <li><a href="">Sign Up <i class="fas fa-users"></i></a></li>
           <li><a href="#">Ask questions, find answers and collaborate at work with Stack Overflow for Teams.</a></li>
           <li><a href="#">Explore Teams  Create a free Team</a></li>
           <li><a href="#">Looking for your Teams?</a></li>
@@ -80,12 +80,13 @@
                <p>Views: {{views}}</p>
           </div>
           <div class="link-language">
-               <a href="#">{{title}}</a>
+               <a href="/details/{{id}}">{{title}}</a>
+
                <p>Language: {{language}}</p>
           </div>
            <div class="answers-username">
                <a href="#">Answers: {{answers}}</a>
-               <p>Posted by: {{user.username}}</p>
+               <p>Posted by: {{#user}}{{username}}{{/user}}</p>
             </div>
         </div>
        

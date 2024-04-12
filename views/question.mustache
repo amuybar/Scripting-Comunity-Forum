@@ -20,24 +20,19 @@
     <!-- Language selection div -->
     <div class="form-group">
       <label for="language" class="label">Select Language:</label>
-      <select class="select" id="language" name="language">
-        <option value="Python">Python</option>
-        <option value="Javascript">Javascript</option>
-        <option value="Java">Java</option>
-        <option value="Other">Other</option>
-      </select>
+       <select class="select" id="language" name="language">
+          <option value="Python">Python</option>
+          <option value="Javascript">Javascript</option>
+          <option value="Java">Java</option>
+          <option value="Other">Other</option>
+       </select>
     </div>
-
-    <!-- Optional: If userId exists, include it as a hidden input -->
-    {% if userId %}
-      <input type="hidden" id="userId" value="{{userId}}">
-    {% endif %}
-
-    <div class="form-group">
-      <label for="content" class="label">Content:</label>
-      <textarea class="textarea" id="content" name="content" rows="10" placeholder="Describe your question in detail"></textarea>
-    </div>
-    <button type="submit" class="btn btn-primary">Submit Question</button>
+     <p id="userId" data-user-id="{{userId}}">Your ID: {{ userId }}</p>
+     <div class="form-group">
+        <label for="content" class="label">Content:</label>
+        <textarea class="textarea" id="content" name="content" rows="10" placeholder="Describe your question in detail"></textarea>
+      </div>
+     <button type="submit" class="btn btn-primary">Submit Question</button>
   </form>
 </div>
 

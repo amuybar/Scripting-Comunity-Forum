@@ -5,25 +5,47 @@ const db = new sqlite3.Database('./database.db');
 // Define the Answers schema
 const Answer = {
   
-
-  // Method to create a new answer
-  create: function (answer, userId, forumId, callback) {
-    db.run('INSERT INTO answers (answer, userId, forumId) VALUES (?, ?, ?)', [answer, userId, forumId], function (err) {
-      if (err) {
-        return callback(err);
-      }
-      callback(null, { id: this.lastID, answer: answer, userId: userId, forumId: forumId });
-    });
+  create: async function (answer, userId, forumId) {
+    try {
+      const result = await db.run('INSERT INTO answers (answer, userId, forumId, timestamp) VALUES (?, ?, ?, datetime("now"))', [answer, userId, forumId]);
+      return { id: result.lastID, answer: answer, userId: userId, forumId: forumId, timestamp: new Date().toISOString() };
+    } catch (error) {
+      throw error;
+    }
+  },
+  getById: async function (id) {
+    try {
+      const row = await new Promise((resolve, reject) => {
+        db.get('SELECT * FROM answers WHERE id = ?', [id], (err, row) => {
+          if (err) {
+            reject(err);
+          } else {
+            resolve(row);
+          }
+        });
+      });
+      return row;
+    } catch (error) {
+      throw error;
+    }
   },
 
-  // Method to get all answers for a forum post
-  getByForumId: function (forumId, callback) {
-    db.all('SELECT * FROM answers WHERE forumId = ?', [forumId], function (err, rows) {
-      if (err) {
-        return callback(err);
-      }
-      callback(null, rows);
-    });
+
+  getByForumId: async function (forumId) {
+    try {
+      const rows = await new Promise((resolve, reject) => {
+        db.all('SELECT * FROM answers WHERE forumId = ?', [forumId], (err, rows) => {
+          if (err) {
+            reject(err);
+          } else {
+            resolve(rows);
+          }
+        });
+      });
+      return rows;
+    } catch (error) {
+      throw error;
+    }
   },
   
   // Add other methods as needed

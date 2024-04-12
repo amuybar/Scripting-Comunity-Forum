@@ -53,6 +53,7 @@ const db = new sqlite3.Database('./database.db', (err) => {
       likes INTEGER DEFAULT 0,
       views INTEGER DEFAULT 0,
       language TEXT,
+      createdAt DATETIME DEFAULT CURRENT_TIMESTAMP,
       FOREIGN KEY (userId) REFERENCES users(id)
     )`);
     
@@ -61,9 +62,11 @@ const db = new sqlite3.Database('./database.db', (err) => {
       answer TEXT,
       userId INTEGER,
       forumId INTEGER,
+      createdAt DATETIME DEFAULT CURRENT_TIMESTAMP,
       FOREIGN KEY (userId) REFERENCES users(id),
       FOREIGN KEY (forumId) REFERENCES forums(id)
     )`);
+    
     db.run(` CREATE TABLE IF NOT EXISTS blogs (
       id INTEGER PRIMARY KEY AUTOINCREMENT,
       title TEXT,
@@ -79,23 +82,30 @@ const db = new sqlite3.Database('./database.db', (err) => {
 const indexRoute = require('./routes/index');
 const authRoute = require('./routes/auth');
 const questionRoute = require('./routes/forum');
+const answerRoute = require('./routes/answers');
 const blogRoute= require('./routes/pages/blog');
 const userRoute = require('./routes/pages/users');
 const teamRoute = require('./routes/pages/teams');
 const tagRoute = require('./routes/pages/tags');
 const saveRoute = require('./routes/pages/saves');
 const companieRoute = require('./routes/pages/companies');
+const detailpageRoute = require('./routes/pages/details');
+const checkAuthRoute=require('./routes/check-auth')
+
 
 
 app.use('/', indexRoute);
 app.use('/auth', authRoute);
 app.use('/api', questionRoute);
+app.use('/api', answerRoute);
 app.use('/', blogRoute);
 app.use('/', userRoute);
 app.use('/', teamRoute);
 app.use('/', tagRoute);
 app.use('/', saveRoute);
 app.use('/', companieRoute);
+app.use('/', detailpageRoute);
+app.use('/api', checkAuthRoute);
 
 
 // serve the static files

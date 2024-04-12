@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Question Details</title>
+    <link rel="stylesheet" href="/css/details.css">
+</head>
+<body>
+    <!-- Top bar with user and title -->
+    <div class="top-bar">
+        <span>Posted By: {{#user}}{{username}}{{/user}}</span>
+        <h1>{{question.title}}</h1>
+    </div>
+
+    <!-- Question content -->
+    <div class="question-content">
+    <h1>{{question.title}}</h1>
+        <p>{{question.content}}</p>
+         <p>Posted by: {{ question.user.username }} - {{ question.timeElapsed }}</p>
+    </div>
+
+    <!-- Action buttons (comment, like, etc.) -->
+    <div class="action-buttons">
+       <button id="comment-button" onclick="scrollToComments()">Comment</button>
+        <button id="like-button">Like</button>
+    </div>
+
+    <!-- Answers section -->
+    <div class="answers-section">
+       <h2>Answers</h2>
+          {{#answers}}
+             <div class="answer">
+                <div class="username">
+                 <p>Posted by: {{user.username}} - {{timeElapsed }}</p>
+                </div>
+               <p>{{answer}}</p>
+               </div>
+          {{/answers}}
+     </div>
+        <!-- Comments section -->
+    <div class="comments-section" id="comments-section">
+    <h2>Reply</h2>
+    <form id="comment-form"  method="post">
+        <textarea name="answer" id="comment-textarea" rows="4" cols="50" placeholder="Enter your Answer"></textarea><br>
+         <p id="forumId" data-user-id="{{forumId}}" hidden>Your fId: {{ forumId }}</p>
+          <p id="selfId" data-user-id="{{selfId}}" hidden>Your ID: {{ selfId }}</p>
+        <button type="submit">Submit</button>
+    </form>
+</div>
+
+    <!-- Links to other topics -->
+    <div class="other-topics">
+        <h2>Other Topics</h2>
+        <!-- Add links to other topics here -->
+        <ul>
+            <li><a href="#">Topic 1</a></li>
+            <li><a href="#">Topic 2</a></li>
+            <!-- Add more links as needed -->
+        </ul>
+    </div>
+    <script src="/js/details.js"></script>
+</body>
+</html>

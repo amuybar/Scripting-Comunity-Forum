@@ -3,6 +3,34 @@ const router = express.Router();
 const passport = require('passport');
 const User = require('../models/User');
 
+
+
+router.get('/users', async (req, res) => {
+  try {
+    const users = await User.getAllUsers(); 
+    res.json(users);
+  } catch (error) {
+    console.error('Error fetching users:', error);
+    res.status(500).send('Internal Server Error');
+  }
+});
+
+router.get('/users/:id', async (req, res) => {
+  try {
+    const userId = req.params.id;
+    const user = await User.getUserById(userId);
+    if (!user) {
+      return res.status(404).json({ error: 'User not found' });
+    }
+    res.json(user);
+  } catch (error) {
+    console.error('Error fetching user:', error);
+    res.status(500).send('Internal Server Error');
+  }
+});
+
+
+
 // Render the login page
 router.get('/login', (req, res) => {
   res.render('login', { errorMessage: req.flash('error') });

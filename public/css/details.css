@@ -1,0 +1,190 @@
+body {
+  background-color: #16293b;
+  color: #f0f0f0;
+  font-family: Arial, sans-serif;
+}
+
+
+.top-bar {
+  
+  padding: 10px;
+  text-align: center;
+}
+
+
+.question-content {
+  margin: 20px;
+  max-width: 60%;
+  margin: 10px auto;
+  padding: 20px;
+  border-radius: 12px;
+  background-color: #ffffff;
+  color: #000000;
+}
+
+
+.action-buttons {
+  margin: 20px auto;
+  max-width: 60%;
+}
+
+.action-buttons button {
+  background-color: #007acc;
+  color: #ffffff;
+  border: none;
+  padding: 10px 20px;
+  margin-right: 10px;
+  cursor: pointer;
+}
+
+
+.comments-section {
+  margin: 20px;
+}
+
+.comments-section h2 {
+  margin-bottom: 10px;
+}
+
+#comment-textarea {
+  max-width: 90%;
+  margin: 10px auto;
+  background-color: #ffffff;
+  color: black;
+  border: none;
+}
+
+#comment-form button {
+  background-color: #007acc;
+  color: #ffffff;
+  border: none;
+  padding: 10px 20px;
+  cursor: pointer;
+}
+
+.comment {
+  background-color: #0a0a0a;
+  padding: 10px;
+  margin-bottom: 10px;
+}
+
+
+.answers-section {
+  margin: 20px;
+}
+
+.answers-section h2 {
+  margin-bottom: 10px;
+}
+
+.answer {
+  background-color: #0a0a0a;
+  padding: 10px;
+  margin-bottom: 10px;
+}
+
+
+.other-topics {
+  margin: 20px;
+}
+
+.other-topics h2 {
+  margin-bottom: 10px;
+}
+
+.other-topics ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.other-topics ul li {
+  margin-bottom: 5px;
+}
+
+.other-topics ul li a {
+  color: #007acc;
+  text-decoration: none;
+}
+
+.other-topics ul li a:hover {
+  text-decoration: underline;
+}
+
+
+.answers-section {
+  margin-top: 20px;
+  background-color: #16293b;
+}
+
+.answers-section h2 {
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+}
+
+.answer {
+  background-color: transparent;
+  color: #ffffff;
+  border: none;
+  border-bottom: 0.01px dotted #007acc;
+  padding: 20px;
+  margin-bottom: 20px;
+}
+
+.username {
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+.username p {
+  margin: 0;
+}
+
+.username p span {
+  color: #555;
+}
+
+.answer p {
+  margin: 0;
+}
+@media screen and (max-width: 768px) {
+  top-bar {
+  
+    padding: 10px;
+    text-align: center;
+  }
+  
+  
+  .question-content {
+    margin: 20px;
+    max-width: 90%;
+    margin: 10px auto;
+    padding: 20px;
+    border-radius: 12px;
+    background-color: rgb(128, 128, 128,0.9);
+    color: #000000;
+  }
+  
+  
+  .action-buttons {
+    margin: 20px auto;
+    max-width: 60%;
+  }
+  
+  .action-buttons button {
+    background-color: #007acc;
+    color: #ffffff;
+    border: none;
+    padding: 10px 20px;
+    margin-right: 10px;
+    cursor: pointer;
+  }
+  
+  
+  .comments-section {
+    margin: 20px;
+  }
+  
+  .comments-section h2 {
+    margin-bottom: 10px;
+  }
+}
